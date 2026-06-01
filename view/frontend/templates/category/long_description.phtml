@@ -1,0 +1,10 @@
+<?php
+/** @var \Magento\Catalog\Block\Category\View $block */
+$longDescription = $block->getCurrentCategory()->getLongDescription();
+?>
+
+<?php if ($longDescription): ?>
+    <div class="category-description category-long-description">
+        <?= $longDescription ?>
+    </div>
+<?php endif; ?>
