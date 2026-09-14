@@ -9,6 +9,12 @@
                     <item name="formElement" xsi:type="string">wysiwyg</item>
                     <item name="source" xsi:type="string">category</item>
                     <item name="wysiwyg" xsi:type="boolean">true</item>
+                    <!-- a few paragraphs of text: the plain editor, not the full-screen Page Builder -->
+                    <item name="wysiwygConfigData" xsi:type="array">
+                        <item name="is_pagebuilder_enabled" xsi:type="boolean">false</item>
+                        <item name="add_variables" xsi:type="boolean">false</item>
+                        <item name="add_widgets" xsi:type="boolean">false</item>
+                    </item>
                     <item name="sortOrder" xsi:type="number">300</item>
                     <item name="dataScope" xsi:type="string">long_description</item>
                 </item>
