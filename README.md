@@ -34,7 +34,7 @@ Anže Voh
 ## Notice
 
 - Always test the module on a development environment before deploying it to your production store.
-- The long description field supports HTML content — ensure that content editors are aware of this.
+- The long description field supports HTML content - ensure that content editors are aware of this.
 
 ## License
 
