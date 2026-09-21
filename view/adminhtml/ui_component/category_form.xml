@@ -1,23 +1,35 @@
 <?xml version="1.0" ?>
 <form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
-	<fieldset name="content">
-        <field name="long_description">
+    <fieldset name="content">
+        <field name="long_description" template="ui/form/field" sortOrder="300" formElement="wysiwyg">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
-                    <item name="dataType" xsi:type="string">text</item>
-                    <item name="label" xsi:type="string" translate="true">Long Description</item>
-                    <item name="formElement" xsi:type="string">wysiwyg</item>
                     <item name="source" xsi:type="string">category</item>
-                    <item name="wysiwyg" xsi:type="boolean">true</item>
                     <item name="wysiwygConfigData" xsi:type="array">
                         <item name="is_pagebuilder_enabled" xsi:type="boolean">false</item>
+                        <item name="pagebuilder_button" xsi:type="boolean">false</item>
+                        <item name="toggle_button" xsi:type="boolean">true</item>
+                        <item name="height" xsi:type="string">260px</item>
                         <item name="add_variables" xsi:type="boolean">false</item>
                         <item name="add_widgets" xsi:type="boolean">false</item>
+                        <item name="add_images" xsi:type="boolean">true</item>
+                        <item name="add_directives" xsi:type="boolean">true</item>
                     </item>
-                    <item name="sortOrder" xsi:type="number">300</item>
-                    <item name="dataScope" xsi:type="string">long_description</item>
                 </item>
             </argument>
+            <settings>
+                <dataType>text</dataType>
+                <label translate="true">Long Description</label>
+                <dataScope>long_description</dataScope>
+            </settings>
+            <formElements>
+                <wysiwyg>
+                    <settings>
+                        <rows>8</rows>
+                        <wysiwyg>true</wysiwyg>
+                    </settings>
+                </wysiwyg>
+            </formElements>
         </field>
-	</fieldset>
+    </fieldset>
 </form>
