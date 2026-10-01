@@ -13,6 +13,11 @@ class InstallData implements InstallDataInterface
 {
  protected $eav_setup;
  protected $connection;
+
+    /** Declared: PHP 8.2 deprecates dynamic properties. */
+    protected $eav_setup_factory;
+
+    protected $eav_config;
  public function __construct(EavSetupFactory $eavSetupFactory,
     \Magento\Framework\App\ResourceConnection $connection,
     \Magento\Eav\Model\Config $eavConfig
