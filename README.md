@@ -1,59 +1,43 @@
-# Magento 2 - Category Long Description Module
+# Magelan_CategoryDesc
 
-The Category Long Description module for Magento 2 adds an additional rich text description field to product categories. It allows store administrators to add a detailed, WYSIWYG-editable long description that displays on the category page in the frontend, below the standard category description.
+A second, long description for Magento 2 categories, shown on the category page below the
+product list - the place for the buying guide or the SEO text that would push the products down
+if it stood above them.
 
-## Features
+## What it does
 
-- **Additional WYSIWYG Description Field:** Adds a "Long Description" field to the category edit form in Magento Admin with full rich text editor support.
-- **Page Builder Support:** Compatible with Magento Page Builder for advanced content layout.
-- **Frontend Display:** Renders the long description on the category view page, below the standard category header.
-- **Store-Scoped Attribute:** The long description can be set per store view, allowing different content for different languages or stores.
-- **Minimal Footprint:** Clean implementation using standard Magento UI components and layout handles.
+* **"Long Description" field** in the category form (*Catalog -> Categories*, section
+  *Content*), with the standard editor: headings, lists, links and images. Page Builder is
+  switched off for this field on purpose, so the text stays plain HTML.
+* **Store view scope:** a different text per language or store.
+* **Frontend:** the text at the end of the category page content, below the products and the
+  pager. Images inserted with the editor (`{{media url="..."}}`) are turned into real URLs.
 
-## Author
+## Installing
 
-Anže Voh  
-[Magento eCommerce developer](https://www.degriz.net/) at Degriz
+```
+bin/magento module:enable Magelan_CategoryDesc
+bin/magento setup:upgrade
+bin/magento cache:flush
+```
 
-## Installation
+## Themes
 
-1. **Download the Module:** Obtain the Category Long Description module from this repository.
-2. **Upload the Files:** Copy the contents of the module to the `app/code/Magelan/CategoryDesc/` folder where your Magento store is located.
-3. **Enable the Module:** Run the following commands in the terminal to enable the module:
+* **Luma** and Luma-based themes: `view/frontend/templates/category/long_description.phtml`.
+* **Hyvä** (1.1 and newer): `view/frontend/templates/hyva/category/long_description.phtml`, no
+  JavaScript. The text is set in the theme's typography (`prose`), so headings, lists and links
+  look like the rest of the shop instead of Tailwind's bare reset. `hyva_catalog_category_view.xml`
+  switches the template; the module needs no Hyvä package: without Hyvä these files are simply
+  never read.
 
-   ```bash
-   php bin/magento module:enable Magelan_CategoryDesc
-   php bin/magento setup:upgrade
-   php bin/magento setup:di:compile
-   php bin/magento cache:flush
-   ```
+  The Hyvä template uses Tailwind classes, so the module registers itself for the theme's
+  Tailwind build. After installing or updating it, regenerate the list and rebuild the theme CSS:
 
-4. **Add Long Description:** Go to **Catalog / Categories**, select a category, and find the **"Long Description"** field in the **General** tab to add your content.
-5. **Refresh Cache:** Flush the Magento cache after making any changes.
+  ```
+  bin/magento hyva:config:generate
+  cd app/design/frontend/<Vendor>/<theme>/web/tailwind && npm run build
+  ```
 
-## Notice
+## Licence
 
-- Always test the module on a development environment before deploying it to your production store.
-- The long description field supports HTML content - ensure that content editors are aware of this.
-
-## License
-
-This project is licensed under the [MIT License](LICENSE).
-
-## Disclaimer
-
-- This module is provided "as is," without any warranty of any kind, express or implied. Use it at your own risk.
-- The author takes no responsibility for any issues or problems that arise from using this module.
-- Free support is not provided.
-- You are free to use and modify this module, but you cannot resell it.
-
-## Additional Information
-
-I specialize in custom Magento development and have successfully completed numerous projects tailored to optimize eCommerce functionalities. My services include:
-
-- **Custom Module Development:** Creating tailored solutions to meet your specific business needs.
-- **Content & SEO Enhancements:** Extending Magento's native content capabilities to improve user experience and search engine visibility.
-- **Performance Optimization:** Ensuring that your Magento store runs efficiently and provides a seamless user experience.
-- **Ongoing Support and Maintenance:** Offering support to keep your Magento store up-to-date and running smoothly.
-
-For more information or inquiries, please visit [Degriz Magento eCommerce Development](https://www.degriz.net/).
+See `LICENSE.txt`.

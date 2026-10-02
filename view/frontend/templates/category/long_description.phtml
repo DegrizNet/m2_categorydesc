@@ -1,10 +1,14 @@
 <?php
 /** @var \Magento\Catalog\Block\Category\View $block */
-$longDescription = $block->getCurrentCategory()->getLongDescription();
+/** @var \Magento\Catalog\Helper\Output $output */
+$output = $this->helper(\Magento\Catalog\Helper\Output::class); // phpcs:ignore Magento2.Templates.ThisInTemplate
+$category = $block->getCurrentCategory();
+// The catalog output helper turns {{media url="..."}} from the editor's image button into a real URL.
+$longDescription = $category ? $output->categoryAttribute($category, $category->getLongDescription(), 'long_description') : '';
 ?>
 
 <?php if ($longDescription): ?>
     <div class="category-description category-long-description">
-        <?= $longDescription ?>
+        <?= /* @noEscape */ $longDescription ?>
     </div>
 <?php endif; ?>

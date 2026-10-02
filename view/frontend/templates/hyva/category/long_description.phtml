@@ -1,0 +1,40 @@
+<?php
+/**
+ * Long category description, Hyvä version.
+ *
+ * Same block and the same HTML from the category editor as the Luma template; on Hyvä it is set
+ * in the theme's typography (`prose`), so headings, paragraphs, lists, links and images get the
+ * theme's type scale instead of Tailwind's bare reset. A line above it separates the text from
+ * the product list and the pager. No JavaScript.
+ *
+ * The catalog output helper (as in the Luma template) turns {{media url="..."}} from the
+ * editor's image button into a real URL.
+ */
+
+declare(strict_types=1);
+
+use Magento\Catalog\Block\Category\View;
+use Magento\Catalog\Helper\Output;
+use Magento\Framework\Escaper;
+
+/** @var View $block */
+/** @var Escaper $escaper */
+
+$category = $block->getCurrentCategory();
+$longDescription = $category ? trim((string) $category->getLongDescription()) : '';
+if ($longDescription !== '') {
+    /** @var Output $output */
+    $output = $this->helper(Output::class); // phpcs:ignore Magento2.Templates.ThisInTemplate
+    $longDescription = (string) $output->categoryAttribute($category, $longDescription, 'long_description');
+}
+
+if ($longDescription === '') {
+    return;
+}
+?>
+<section class="magelan-category-long-description category-long-description mt-10 border-t border-gray-300 pt-8"
+         aria-label="<?= $escaper->escapeHtmlAttr(__('About this category')) ?>">
+    <div class="prose max-w-none">
+        <?= /* @noEscape */ $longDescription ?>
+    </div>
+</section>

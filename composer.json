@@ -2,6 +2,7 @@
     "name": "degriznet/m2_categorydesc",
     "description": "Magento 2: extra long category description field, rendered below the product listing.",
     "type": "magento2-module",
+    "version": "1.0.1",
     "license": "proprietary",
     "authors": [
         {
@@ -24,5 +25,13 @@
         "psr-4": {
             "Magelan\\CategoryDesc\\": ""
         }
+    },
+    "archive": {
+        "exclude": [
+            "/.gitattributes",
+            "/.gitignore",
+            "/.github",
+            "/dev"
+        ]
     }
 }

@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<!--
+    Hyvä only: Hyva_Theme adds a "hyva_" copy of every layout handle on a Hyvä theme, so Luma
+    never reads this file.
+
+    The block stays where the Luma layout puts it (end of "content", below the product list);
+    only the template changes. The Luma template has no styles of its own on Hyvä: the editor's
+    headings, paragraphs and lists lost their spacing to Tailwind's reset.
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceBlock name="category.long_description" template="Magelan_CategoryDesc::hyva/category/long_description.phtml"/>
+    </body>
+</page>
