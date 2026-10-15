@@ -1,0 +1,38 @@
+{
+    "module": "Magelan_CategoryDesc",
+    "package": "degriznet/m2_categorydesc",
+    "releases": [
+        {
+            "version": "1.0.2",
+            "date": "2026-10-15",
+            "sl": [],
+            "en": []
+        },
+        {
+            "version": "1.0.1",
+            "date": "2026-10-02",
+            "sl": [
+                "Podpora za temo Hyvä: besedilo ima enako obliko kot ostala vsebina trgovine.",
+                "Slike, vstavljene v urejevalniku, se prikažejo pravilno.",
+                "Dolgi opis se ureja v navadnem urejevalniku brez Page Builderja, besedilo ima svojo vrednost za vsak pogled trgovine.",
+                "Odpravljena nepotrebna zahteva za slogovno datoteko na vsaki kategoriji."
+            ],
+            "en": [
+                "Support for the Hyvä theme: the text looks like the rest of the shop content.",
+                "Images inserted in the editor display correctly.",
+                "The long description is edited in a plain editor without Page Builder, with a separate value for each store view.",
+                "Removed an unnecessary stylesheet request on every category page."
+            ]
+        },
+        {
+            "version": "1.0.0",
+            "date": "2026-08-03",
+            "sl": [
+                "Prva izdaja: drugi, dolgi opis kategorije, prikazan na strani kategorije pod seznamom izdelkov (vodnik za nakup ali besedilo za iskalnike)."
+            ],
+            "en": [
+                "First release: a second, long category description shown on the category page below the product list (a buying guide or text for search engines)."
+            ]
+        }
+    ]
+}

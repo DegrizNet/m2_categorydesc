@@ -2,6 +2,10 @@
 
 All notable changes to Magelan_CategoryDesc.
 
+## 1.0.2 - 2026-10-15
+
+- Release notes for the module page.
+
 ## 1.0.1 - 2026-10-02
 
 - Hyvä support in the module itself: `hyva/category/long_description.phtml` sets the text in the theme's typography (`prose`); on Hyvä headings, paragraphs and lists had lost their spacing to Tailwind's reset. Luma is unchanged.
