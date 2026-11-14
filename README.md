@@ -1,5 +1,16 @@
 # Magelan_CategoryDesc
 
+> **Free and open source (MIT).** Works with Luma and Hyvä out of the box, no compatibility package needed. Made by [Degriz](https://www.degriz.eu/long-category-description), a Magento and Hyvä agency from Slovenia.
+
+## Install with Composer
+
+```
+composer require degriznet/m2_categorydesc
+bin/magento module:enable Magelan_CategoryDesc
+bin/magento setup:upgrade
+bin/magento cache:flush
+```
+
 A second, long description for Magento 2 categories, shown on the category page below the
 product list - the place for the buying guide or the SEO text that would push the products down
 if it stood above them.

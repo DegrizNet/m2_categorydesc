@@ -2,6 +2,11 @@
 
 All notable changes to Magelan_CategoryDesc.
 
+## 1.1.0 - 2026-11-14
+
+- Free and open source under the MIT licence; installable from Packagist (`composer require degriznet/m2_categorydesc`).
+- PHP 8.5 allowed in composer.json.
+
 ## 1.0.2 - 2026-10-15
 
 - Release notes for the module page.
